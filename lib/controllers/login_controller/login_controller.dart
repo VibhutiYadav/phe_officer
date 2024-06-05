@@ -41,6 +41,7 @@ class LoginController extends GetxController {
 
       deviceToken.value = token ?? "Failed to get token";
 
+      print("deviceToken ${deviceToken.value}");
   }
   Future<void> login() async {
     // Get.to(BottomNavigation());
