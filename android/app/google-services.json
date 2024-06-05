@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "368428267080",
+    "project_id": "handpumpking-c883d",
+    "storage_bucket": "handpumpking-c883d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368428267080:android:e2a3bb64f28af0e7e50a7d",
+        "android_client_info": {
+          "package_name": "com.handpumpSupervisor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1MqLUyDYSBC8lxwwmKDdJCmdGSFoEAbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368428267080:android:36343acbf9c97db0e50a7d",
+        "android_client_info": {
+          "package_name": "com.handpumpking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1MqLUyDYSBC8lxwwmKDdJCmdGSFoEAbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368428267080:android:2a93337a717ecf1fe50a7d",
+        "android_client_info": {
+          "package_name": "com.handpumpofficer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1MqLUyDYSBC8lxwwmKDdJCmdGSFoEAbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
