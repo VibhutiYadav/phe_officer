@@ -1,5 +1,5 @@
 class ProjectImages {
-  static const Splash =  "assets/images/splash.gif";
+  static const Splash =  "assets/images/Splash.png";
   static const logo =  "assets/images/BlackLogo.png";
   static const mail =  "assets/images/mail.png";
   static const lock =  "assets/images/lock.png";

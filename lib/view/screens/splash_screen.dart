@@ -21,9 +21,7 @@ class SplashScreen extends StatelessWidget {
         color: Colors.white,
         height: context.height,
         width: context.width,
-        child: Image.asset(ProjectImages.Splash,
-          height: 180,
-          width: 180,),
+        child: Image.asset(ProjectImages.Splash,fit:BoxFit.cover,),
       ),
     );
   }

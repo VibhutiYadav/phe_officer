@@ -18,7 +18,8 @@ class Constants {
   static const  ISSUE="${BASE_URL}issue";
   static const  SERVICE="${BASE_URL}service";
   static const  BANNER="${BASE_URL}banner";
-  static const  LOCATION="${BASE_URL}location";
+  // static const  LOCATION="${BASE_URL}location";
+  static const  LOCATION="${BASE_URL}emp_location";
   static const  COMPLAINT="${BASE_URL}complaints";
   static const  COMMENT="${BASE_URL}comment";
 

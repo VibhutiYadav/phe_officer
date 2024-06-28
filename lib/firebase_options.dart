@@ -25,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -53,11 +47,12 @@ class DefaultFirebaseOptions {
     projectId: 'handpumpking-c883d',
     authDomain: 'handpumpking-c883d.firebaseapp.com',
     storageBucket: 'handpumpking-c883d.appspot.com',
+    measurementId: 'G-XQ0K6JFFFB',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD1MqLUyDYSBC8lxwwmKDdJCmdGSFoEAbY',
-    appId: '1:368428267080:android:2a93337a717ecf1fe50a7d',
+    appId: '1:368428267080:android:e2a3bb64f28af0e7e50a7d',
     messagingSenderId: '368428267080',
     projectId: 'handpumpking-c883d',
     storageBucket: 'handpumpking-c883d.appspot.com',
@@ -71,4 +66,24 @@ class DefaultFirebaseOptions {
     storageBucket: 'handpumpking-c883d.appspot.com',
     iosBundleId: 'com.handpumpofficer',
   );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDZPJZ-_9lXPJd5NoaP-0260mZ-O0KRGsU',
+    appId: '1:368428267080:ios:12ab3657a33f5f07e50a7d',
+    messagingSenderId: '368428267080',
+    projectId: 'handpumpking-c883d',
+    storageBucket: 'handpumpking-c883d.appspot.com',
+    iosBundleId: 'com.techpanda.handpumpsupervisor.handpumpSupervisor',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCHL-K2_VAcoo7GjrCuaKplxuda0ItG6uI',
+    appId: '1:368428267080:web:f16e304f04ffa942e50a7d',
+    messagingSenderId: '368428267080',
+    projectId: 'handpumpking-c883d',
+    authDomain: 'handpumpking-c883d.firebaseapp.com',
+    storageBucket: 'handpumpking-c883d.appspot.com',
+    measurementId: 'G-NEN0HV8ZGW',
+  );
+
 }

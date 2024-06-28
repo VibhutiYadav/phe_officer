@@ -40,7 +40,7 @@ dependencies:
   flutter_localization: ^0.2.0
   http: ^1.2.1
   fluttertoast: ^8.2.5
-  geolocator: ^8.2.0
+  geolocator: ^8.0.0
   permission_handler: ^10.0.0
   carousel_slider: ^4.0.0
   pie_chart: ^5.0.0
@@ -58,6 +58,8 @@ dependencies:
   firebase_core: ^2.30.0
   shimmer: ^3.0.0
   flutter_local_notifications: ^17.1.2
+  background_location: ^0.13.0
+  workmanager: ^0.5.2
 
 dev_dependencies:
   flutter_test:

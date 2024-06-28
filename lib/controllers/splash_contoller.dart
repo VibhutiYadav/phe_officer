@@ -25,7 +25,7 @@ class SplashController extends GetxController {
 
   Future<void> _redirect() async {
     _timer = Timer(
-      const Duration(milliseconds: 5000),
+      const Duration(milliseconds: 1000),
           () async {
         await SystemChrome.setEnabledSystemUIMode(
           SystemUiMode.manual,
@@ -48,7 +48,7 @@ class SplashController extends GetxController {
   }
 
   Future<Timer> loadData() async {
-    return Timer(const Duration(milliseconds: 4000), onDoneLoading);
+    return Timer(const Duration(milliseconds: 3000), onDoneLoading);
   }
 
   onDoneLoading() async {

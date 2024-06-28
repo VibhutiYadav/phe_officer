@@ -128,7 +128,7 @@ class DashboardView extends StatelessWidget {
                                                     SizedBox(width: 5),
                                                     Text('${controller.status.where((item) => item['status'] == 'pending').length}',textScaleFactor: 1,style: TextStyle(
                                                         height: 0.8, fontWeight: FontWeight.bold,
-                                                        fontSize: 13
+                                                        fontSize: 18
                                                     ),),
                                                     SizedBox(width: 5),
                                                     Text("Pending".tr,textScaleFactor: 1,style: TextStyle(
@@ -157,7 +157,7 @@ class DashboardView extends StatelessWidget {
                                                         textScaleFactor: 1, style: TextStyle(
                                                           height: 0.8,
                                                           fontWeight: FontWeight.bold,
-                                                          fontSize: 13
+                                                          fontSize: 18
                                                       ),),
                                                     SizedBox(width: 5),
                                                     Text("INProgress".tr,textScaleFactor: 1,style: TextStyle(
@@ -187,7 +187,7 @@ class DashboardView extends StatelessWidget {
                                                     SizedBox(width: 5),
                                                     Text('${controller.status.length}',textScaleFactor: 1,style: TextStyle(
                                                         height: 0.9,
-                                                        fontSize: 13,
+                                                        fontSize: 18,
                                                         fontWeight: FontWeight.bold
                                                     ),),
                                                     SizedBox(width: 5),
@@ -210,6 +210,7 @@ class DashboardView extends StatelessWidget {
                                                 'In Progress': controller.status.where((item) => item['status'] == 'in_progress').length.toDouble(),
                                                 'Completed': controller.status.length.toDouble(),
                                               },
+                                              chartValuesOptions: ChartValuesOptions(showChartValues: false),
                                               ringStrokeWidth: 28,
                                               legendOptions: LegendOptions(
                                                   showLegends: false,
