@@ -1,9 +1,12 @@
-
 import 'dart:async';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../routes/routes.dart';
 import 'package:flutter/services.dart';
 import '../view/screens/bottom_navigaton.dart';
+import 'newLocationController.dart';
 
 
 class SplashController extends GetxController {
@@ -12,6 +15,7 @@ class SplashController extends GetxController {
 
   @override
   void onInit() {
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     super.onInit();
     loadData();
   }
@@ -25,7 +29,7 @@ class SplashController extends GetxController {
 
   Future<void> _redirect() async {
     _timer = Timer(
-      const Duration(milliseconds: 1000),
+      const Duration(milliseconds: 5000),
           () async {
         await SystemChrome.setEnabledSystemUIMode(
           SystemUiMode.manual,
@@ -44,25 +48,31 @@ class SplashController extends GetxController {
   @override
   void onClose() {
     _timer?.cancel();
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.blue));
     super.onClose();
   }
 
   Future<Timer> loadData() async {
     return Timer(const Duration(milliseconds: 3000), onDoneLoading);
   }
-
+  LocationController locationController=Get.put(LocationController());
   onDoneLoading() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var userData=await prefs.getString('UserDetail');
-    final SupervisorId = prefs.getString('SupervisorId');
-    print("SupervisorId $SupervisorId");
-    // var userId = storage.read('USER_ID');
+    var userId=await prefs.getString('UserId');
+    if(kDebugMode){
+      // (kDebugMode)?print("user id $userData");
+    }
 
-    // print("called");
-    if (SupervisorId == '' || SupervisorId== null) {
+    // var userId = storage.read('USER_ID');
+    if(locationController.PermissionGiven.value!='always'){
+      locationController.showAlert();
+    };
+    // (kDebugMode)?print("called");
+    if (userId == '' || userId== null) {
       Get.offNamed("/loginScreen");
     } else {
-
+      // Get.offAll(Bottom());
       Get.offAll(BottomNavigation());
     }
   }

@@ -9,6 +9,7 @@ import 'package:handpump_supervisor/widget/cached_network_image.dart';
 import 'package:pie_chart/pie_chart.dart';
 import '../../constant/constants.dart';
 import '../../controllers/dashboard_controller.dart';
+import '../../controllers/newLocationController.dart';
 import '../../helper/images.dart';
 
 class DashboardView extends StatelessWidget {
@@ -16,6 +17,10 @@ class DashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocationController locationController=Get.put(LocationController());
+    locationController.onInit();
+    locationController.startLocationService();
+    locationController.checkAndEnableLocationService();
     controller.fetchStatusData();
     return SafeArea(
       child: Scaffold(

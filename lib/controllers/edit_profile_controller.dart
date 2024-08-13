@@ -9,7 +9,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signature/signature.dart';
-
+import 'package:image/image.dart' as img;
 import '../constant/constants.dart';
 import '../view/screens/bottom_navigaton.dart';
 import '../view/screens/login_screen.dart';
@@ -23,7 +23,7 @@ class EditProfileController extends GetxController {
 
   var isload = false.obs;
   var signatures = List<Uint8List?>.filled(1, null, growable: false).obs;
-
+  var compressedSignatures = [];
   @override
   void onInit() {
     super.onInit();
@@ -38,16 +38,43 @@ class EditProfileController extends GetxController {
     super.onClose();
   }
 
-  void updateSignature(int index, Uint8List signature) {
-    print("Signature updated at index $index");
-    print("Signature updated at index $signature");
-    if (index == 0) {
-      signatures[index] = signature;
-      update();
+  // void updateSignature(int index, Uint8List signature) {
+  //   print("Signature updated at index $index");
+  //   print("Signature updated at index $signature");
+  //   if (index == 0) {
+  //     signatures[index] = signature;
+  //     update();
+  //
+  //     print("signature list ${signatures}");
+  //   } else {
+  //     print("Invalid index: $index");
+  //   }
+  // }
 
-      print("signature list ${signatures}");
+  void updateSignature(int index, Uint8List signature) {
+    if (index >= 0 && index < signatures.length) {
+      signatures[index] = signature;
+      Uint8List compressedBytes = Uint8List.fromList(img.encodePng(img.decodeImage(signature)!, level: 6));
+      String signatureBase64 = base64Encode(compressedBytes);
+      if (index < compressedSignatures.length) {
+        compressedSignatures[index] = signatureBase64;
+      } else {
+        compressedSignatures.add(signatureBase64);
+      }
+      getSignatureFromBase64(0);
+      print("Signature updated at index $index");
     } else {
       print("Invalid index: $index");
+    }
+  }
+
+  getSignatureFromBase64(int index) {
+    if (index >= 0 && index < compressedSignatures.length) {
+      String signatureBase64 = compressedSignatures[index];
+      signatures[index]=base64Decode(signatureBase64);
+      // return base64Decode(signatureBase64);
+    } else {
+      throw IndexError(index, compressedSignatures);
     }
   }
 

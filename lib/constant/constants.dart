@@ -8,7 +8,7 @@ class Constants {
 
   static const API_V1_PATH = "/api/v1";
 
-  static const Google_Map_key='AIzaSyDyeucASg8epjdag7y94MK2F7xJoA5P7QQ';
+  static String Google_Map_key='';
 
   static const  GET_USER_SERVICES ="${BASE_URL}user/otp_verify1";
   static const LOG_IN = "${BASE_URL}provider/login";

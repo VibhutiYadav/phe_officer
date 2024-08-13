@@ -1,20 +1,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>-->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:label="PHE Officer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <service android:name="yukams.app.background_locator_2.IsolateHolderService"
+            android:permission="android.permission.FOREGROUND_SERVICE"
+            android:exported="true"
+            android:foregroundServiceType = "location"/>
+        <service
+            android:name="com.techpanda.handpump_manager.location_service"
+            android:foregroundServiceType="location" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <service
             android:name="com.workmanager.WorkerWrapper"
             android:permission="android.permission.BIND_JOB_SERVICE"
@@ -75,7 +85,7 @@
 
 
     <!-- Required to query activities that can process text, see:
-         https://developer.android.com/training/package="com.handpumpofficer">
+         https://developer.android.com/training/package="com.handpumpSupervisor">
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
 
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->

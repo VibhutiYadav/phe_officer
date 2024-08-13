@@ -1,4 +1,4 @@
-package com.handpumpofficer
+package com.handpumpSupervisor
 
 import io.flutter.embedding.android.FlutterActivity
 
